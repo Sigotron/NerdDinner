@@ -47,3 +47,5 @@ C:\Git\NerdDinner\NerdDinner\NerdDinner\bin\DotNetOpenAuth.OpenId.RelyingParty.x
 C:\Git\NerdDinner\NerdDinner\NerdDinner\obj\Debug\NerdDinner.csprojResolveAssemblyReference.cache
 C:\Git\NerdDinner\NerdDinner\NerdDinner\obj\Debug\NerdDinner.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner\obj\Debug\NerdDinner.pdb
+C:\Git\NerdDinner\NerdDinner\NerdDinner\bin\EntityFramework.SqlServer.dll
+C:\Git\NerdDinner\NerdDinner\NerdDinner\bin\EntityFramework.SqlServer.xml
