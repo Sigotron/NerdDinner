@@ -17,7 +17,7 @@
 <ul>
 <% foreach(var d in Model) { %>
     <li>
-        <%= d.Title %> (%=d.EventDate %>)
+        <%= d.Title %> (<%=d.EventDate %>)
     </li>
 <% } %>
 

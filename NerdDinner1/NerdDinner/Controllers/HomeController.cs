@@ -30,6 +30,7 @@ namespace NerdDinner.Controllers
         [HttpPost]
         public ActionResult Create(Dinner dinner)
         {
+
             if (ModelState.IsValid)
             {
                 nerdDinners.Dinners.Add(dinner);
