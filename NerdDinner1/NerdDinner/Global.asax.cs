@@ -24,7 +24,7 @@ namespace NerdDinner
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 
             // my addition
-            Database.SetInitializer<NerdDinners>(new DropCreateDatabaseIfModelChanges<NerdDinners>());
+            Database.SetInitializer<NerdDinners>(new NerdDinnersInitializer());
 
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
