@@ -12,6 +12,7 @@ namespace NerdDinner
         public DateTime EventDate { get; set; }
         public string Address { get; set; }
         public string HostedBy { get; set; }
+        public string Country { get; set; }
 
         // virtual implies lazy loadinf which means that RSVPs 
         // won't load until the first time it is accessed

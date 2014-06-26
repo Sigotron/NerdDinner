@@ -49,6 +49,14 @@
                 <%: Html.EditorFor(model => model.HostedBy) %>
                 <%: Html.ValidationMessageFor(model => model.HostedBy) %>
             </div>
+            
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Country) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.Country) %>
+                <%: Html.ValidationMessageFor(model => model.Country) %>
+            </div>
     
             <p>
                 <input type="submit" value="Create" />

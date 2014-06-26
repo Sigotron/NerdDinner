@@ -9,7 +9,6 @@ namespace NerdDinner.Controllers
 {
     public class HomeController : Controller
     {
-        // ToDo: Is this a field?
         NerdDinners nerdDinners = new NerdDinners();
 
         public ActionResult Index()
@@ -23,7 +22,6 @@ namespace NerdDinner.Controllers
 
         public ActionResult Create()
         {
-            // ToDo: Find out what this is 
             return View();
         }
 
