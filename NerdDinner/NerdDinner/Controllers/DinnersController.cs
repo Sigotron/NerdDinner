@@ -10,14 +10,14 @@ namespace NerdDinner.Controllers
     public class DinnersController : Controller
     {
         // Fields
-        readonly DinnerRepository _dinnerRepo = new DinnerRepository();
+        DinnerRepository _dinnerRepo = new DinnerRepository();
 
         //
         // GET: /Dinner/
 
         public ActionResult Index()
         {
-            IEnumerable<Dinner> dinners = _dinnerRepo.FindUpcomingDinners().ToList();
+            var dinners = _dinnerRepo.FindUpcomingDinners().ToList();
             return View(dinners);
         }
 

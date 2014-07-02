@@ -45,5 +45,7 @@ namespace NerdDinner.Models
 
         [Required(ErrorMessage = "Required Field")]
         public float Longitude { get; set; }
+
     }
+
 }
