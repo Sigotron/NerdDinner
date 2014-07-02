@@ -169,6 +169,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Dinner.cs" />
+    <Compile Include="Models\DinnerRepository.cs" />
     <Compile Include="Models\NerdDinnerEntities.cs" />
     <Compile Include="Models\RSVP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
