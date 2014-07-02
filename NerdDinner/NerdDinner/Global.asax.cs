@@ -16,6 +16,8 @@ namespace NerdDinner
     {
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(new NerdDinner.Models.SampleData());
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
