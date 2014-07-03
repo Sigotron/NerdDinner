@@ -289,7 +289,6 @@
     <Content Include="Views\Dinners\NotFound.cshtml" />
     <Content Include="Views\Dinners\Details.cshtml" />
     <Content Include="Views\Dinners\Index.cshtml" />
-    <Content Include="Views\Dinners\adsfasdg.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,14 +7,10 @@
 
 <h2>Upcoming Dinners</h2>
 
-<p>
-@*    @Html.ActionLink("Create New", "Create")*@
-</p>
-
 <ul>
     @foreach (var item in Model) {
         <li>
-            @Html.DisplayFor(model => item.Title)
+            <a href="/Dinners/Details/@item.DinnerId">@item.Title</a>
             on
             @Html.DisplayFor(model => item.EventDate)
         </li>
