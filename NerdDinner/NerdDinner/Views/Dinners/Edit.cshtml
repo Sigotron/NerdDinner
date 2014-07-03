@@ -7,62 +7,7 @@
 
 <h2>Edit Dinner</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Dinner</legend>
-        <p>
-            @Html.Label("Dinner Title:")
-            @Html.EditorFor(model => model.Dinner.Title)
-            @Html.ValidationMessageFor(model => model.Dinner.Title)
-        </p>
-        <p>
-            @Html.Label("Event Date:")
-            @Html.EditorFor(model => model.Dinner.EventDate)
-            @Html.ValidationMessageFor(model => model.Dinner.EventDate)
-        </p>
-        <p>
-            @Html.Label("Description:")
-            @Html.EditorFor(model => model.Dinner.Description)
-            @Html.ValidationMessageFor(model => model.Dinner.Description)
-        </p>
-        <p>
-            @Html.Label("Address:")
-            @Html.EditorFor(model => model.Dinner.Address)
-            @Html.ValidationMessageFor(model => model.Dinner.Address)
-        </p>
-        <p>
-            @Html.Label("Country:")
-            @Html.DropDownList("Country", Model.Countries)
-            @Html.ValidationMessageFor(model => model.Dinner.Country)
-        </p>
-        <p>
-            @Html.Label("Hosted By:")
-            @Html.EditorFor(model => model.Dinner.HostedBy)
-            @Html.ValidationMessageFor(model => model.Dinner.HostedBy)
-        </p>
-        <p>
-            @Html.Label("Contact Phone #:")
-            @Html.EditorFor(model => model.Dinner.ContactPhone)
-            @Html.ValidationMessageFor(model => model.Dinner.ContactPhone)
-        </p>
-        <p>
-            @Html.Label("Latitude:")
-            @Html.EditorFor(model => model.Dinner.Latitude)
-            @Html.ValidationMessageFor(model => model.Dinner.Latitude)
-        </p>
-        <p>
-            @Html.Label("Longitude:")
-            @Html.EditorFor(model => model.Dinner.Longitude)
-            @Html.ValidationMessageFor(model => model.Dinner.Longitude)
-        </p>
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
+@{ Html.RenderPartial("DinnerForm"); }
 
 <div>
     @Html.ActionLink("Back to List", "Index")

@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NerdDinner.Models;
 
 namespace NerdDinner.Controllers
 {
     public class HomeController : Controller
     {
+
+        // Fields
+        DinnerRepository _dinnerRepo = new DinnerRepository();
+
+        //
+        // GET: /Dinner/
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
-            return View();
+            var dinners = _dinnerRepo.FindUpcomingDinners().ToList();
+            return View(dinners);
         }
 
         public ActionResult About()
