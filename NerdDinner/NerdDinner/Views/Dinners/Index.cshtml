@@ -10,7 +10,7 @@
 <ul>
     @foreach (var item in Model) {
         <li>
-            <a href="/Dinners/Details/@item.DinnerId">@item.Title</a>
+            @Html.ActionLink(item.Title, "Details", new { id = item.DinnerId  })
             on
             @Html.DisplayFor(model => item.EventDate)
         </li>
