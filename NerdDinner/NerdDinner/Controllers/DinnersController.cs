@@ -54,21 +54,12 @@ namespace NerdDinner.Controllers
             }
             catch
             {
+                foreach (var issue in dinner.GetRuleViolations())
+                {
+                    ModelState.AddModelError(issue.PropertyName, issue.ErrorMessage);
+                }
                 return View(dinner);
             }
         }
-
-//        [HttpPost]
-//        public ActionResult Edit(Dinner dinner)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                UpdateModel(dinner);
-//                _dinnerRepo.Save();
-//                return RedirectToAction("Details", dinner.DinnerId);
-//            }
-//            return View(dinner);
-//        }
-
     }
 }
