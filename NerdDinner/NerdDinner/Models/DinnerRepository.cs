@@ -36,10 +36,7 @@ namespace NerdDinner.Models
 
         public void Delete(Dinner dinner)
         {
-            if (_db.Dinners.Contains(dinner))
-            {
                 _db.Dinners.Remove(dinner);
-            }
         }
 
         // Persistence

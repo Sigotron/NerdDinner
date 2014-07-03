@@ -1,0 +1,72 @@
+﻿@model NerdDinner.Models.Dinner
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Host a Dinner</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Dinner</legend>
+        <p>
+            @Html.Label("Dinner Title:")
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </p>
+        <p>
+            @Html.Label("Event Date:")
+            @Html.EditorFor(model => model.EventDate)
+            @Html.ValidationMessageFor(model => model.EventDate)
+        </p>
+        <p>
+            @Html.Label("Description:")
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </p>
+        <p>
+            @Html.Label("Address:")
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </p>
+        <p>
+            @Html.Label("Country:")
+            @Html.EditorFor(model => model.Country)
+            @Html.ValidationMessageFor(model => model.Country)
+        </p>
+        <p>
+            @Html.Label("Hosted By:")
+            @Html.EditorFor(model => model.HostedBy)
+            @Html.ValidationMessageFor(model => model.HostedBy)
+        </p>
+        <p>
+            @Html.Label("Contact Phone #:")
+            @Html.EditorFor(model => model.ContactPhone)
+            @Html.ValidationMessageFor(model => model.ContactPhone)
+        </p>
+        <p>
+            @Html.Label("Latitude:")
+            @Html.EditorFor(model => model.Latitude)
+            @Html.ValidationMessageFor(model => model.Latitude)
+        </p>
+        <p>
+            @Html.Label("Longitude:")
+            @Html.EditorFor(model => model.Longitude)
+            @Html.ValidationMessageFor(model => model.Longitude)
+        </p>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

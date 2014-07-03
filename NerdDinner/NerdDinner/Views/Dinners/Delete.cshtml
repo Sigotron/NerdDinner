@@ -1,0 +1,23 @@
+﻿@model NerdDinner.Models.Dinner
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Confirmation</h2>
+
+<div>
+    <p>
+        Are you sure you want to delete the dinner titled:
+    <i>@Html.DisplayFor(model => model.Title)?</i>
+    </p>
+</div>
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Delete" />
+        |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
