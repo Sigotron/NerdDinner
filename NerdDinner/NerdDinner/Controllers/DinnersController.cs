@@ -30,5 +30,45 @@ namespace NerdDinner.Controllers
             return dinner == null ? View("NotFound") : View(dinner);
         }
 
+        //
+        // GET: /Dinners/Edit/2
+
+        public ActionResult Edit(int id)
+        {
+            Dinner dinner = _dinnerRepo.GetDinner(id);
+            return View(dinner);
+        }
+
+        //
+        // POST: /Dinners/Edit/2
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Edit(int id, FormCollection formValues)
+        {
+            Dinner dinner = _dinnerRepo.GetDinner(id);
+            try
+            {
+                UpdateModel(dinner);
+                _dinnerRepo.Save();
+                return RedirectToAction("Details", new { id = dinner.DinnerId });
+            }
+            catch
+            {
+                return View(dinner);
+            }
+        }
+
+//        [HttpPost]
+//        public ActionResult Edit(Dinner dinner)
+//        {
+//            if (ModelState.IsValid)
+//            {
+//                UpdateModel(dinner);
+//                _dinnerRepo.Save();
+//                return RedirectToAction("Details", dinner.DinnerId);
+//            }
+//            return View(dinner);
+//        }
+
     }
 }
