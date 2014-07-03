@@ -31,19 +31,20 @@ namespace NerdDinner.Controllers
         }
 
         //
-        // GET: /Dinners/Edit/2
+        // GET: /Dinners/Edit/5
 
+        [Authorize]
         public ActionResult Edit(int id)
         {
             Dinner dinner = _dinnerRepo.GetDinner(id);
-            return View(dinner);
+            return View(new DinnerFormViewModel(dinner));
         }
 
         //
-        // POST: /Dinners/Edit/2
+        // POST: /Dinners/Edit/5
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(int id, FormCollection formValues)
+        public ActionResult Edit(int id, FormCollection collection)
         {
             Dinner dinner = _dinnerRepo.GetDinner(id);
             try
@@ -55,7 +56,7 @@ namespace NerdDinner.Controllers
             catch
             {
                 ModelState.AddRuleViolations(dinner.GetRuleViolations());
-                return View(dinner);
+                return View(new DinnerFormViewModel(dinner));
             }
         }
 
@@ -65,10 +66,10 @@ namespace NerdDinner.Controllers
         public ActionResult Create()
         {
             Dinner dinner = new Dinner()
-                {
-                    EventDate = DateTime.Now.AddDays(7)
-                };
-            return View(dinner);
+            {
+                EventDate = DateTime.Now.AddDays(7)
+            };
+            return View(new DinnerFormViewModel(dinner));
         }
 
         //
@@ -91,8 +92,10 @@ namespace NerdDinner.Controllers
                     ModelState.AddRuleViolations(dinner.GetRuleViolations());
                 }
             }
-            return View(dinner);
+            return View(new DinnerFormViewModel(dinner));
         }
+ 
+ 
 
         //
         // GET: /Dinners/Delete/2
