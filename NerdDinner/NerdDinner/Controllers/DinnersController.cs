@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NerdDinner.DataStructures;
 using NerdDinner.Models;
 
 namespace NerdDinner.Controllers
@@ -17,9 +18,9 @@ namespace NerdDinner.Controllers
 
         public ActionResult Index(int? page)
         {
-            const int pageSize = 10;
+            const int pageSize = 1;
             var dinners = _dinnerRepo.FindUpcomingDinners();
-            var paginatedDinners = dinners.Skip((page ?? 0) * pageSize).Take(pageSize).ToList();
+            var paginatedDinners = new PaginatedList<Dinner>(dinners, page ?? 0, pageSize);
             return View(paginatedDinners);
         }
 

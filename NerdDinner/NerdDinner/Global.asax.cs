@@ -24,5 +24,6 @@ namespace NerdDinner
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
     }
 }
