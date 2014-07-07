@@ -15,10 +15,12 @@ namespace NerdDinner.Controllers
         //
         // GET: /Dinner/
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var dinners = _dinnerRepo.FindUpcomingDinners().ToList();
-            return View(dinners);
+            const int pageSize = 10;
+            var dinners = _dinnerRepo.FindUpcomingDinners();
+            var paginatedDinners = dinners.Skip((page ?? 0) * pageSize).Take(pageSize).ToList();
+            return View(paginatedDinners);
         }
 
         //
