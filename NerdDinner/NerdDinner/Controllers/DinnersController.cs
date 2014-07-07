@@ -18,7 +18,7 @@ namespace NerdDinner.Controllers
 
         public ActionResult Index(int? page)
         {
-            const int pageSize = 1;
+            const int pageSize = 5;
             var dinners = _dinnerRepo.FindUpcomingDinners();
             var paginatedDinners = new PaginatedList<Dinner>(dinners, page ?? 0, pageSize);
             return View(paginatedDinners);
@@ -40,6 +40,10 @@ namespace NerdDinner.Controllers
         public ActionResult Edit(int id)
         {
             Dinner dinner = _dinnerRepo.GetDinner(id);
+
+            if (!dinner.IsHostedBy(User.Identity.Name))
+                return View("InvalidOwner");
+
             return View(new DinnerFormViewModel(dinner));
         }
 
@@ -50,6 +54,10 @@ namespace NerdDinner.Controllers
         public ActionResult Edit(int id, FormCollection collection)
         {
             Dinner dinner = _dinnerRepo.GetDinner(id);
+
+            if (!dinner.IsHostedBy(User.Identity.Name))
+                return View("InvalidOwner");
+
             try
             {
                 UpdateModel(dinner);
@@ -66,6 +74,7 @@ namespace NerdDinner.Controllers
         //
         // GET: /Dinners/Create
 
+        [Authorize]
         public ActionResult Create()
         {
             Dinner dinner = new Dinner()
@@ -78,14 +87,19 @@ namespace NerdDinner.Controllers
         //
         // POST: /Dinners/Create
 
-        [AcceptVerbs(HttpVerbs.Post)]
+        [AcceptVerbs(HttpVerbs.Post), Authorize]
         public ActionResult Create(Dinner dinner)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    dinner.HostedBy = "SomeUser";
+                    dinner.HostedBy = User.Identity.Name;
+
+                    RSVP rsvp = new RSVP();
+                    rsvp.AttendeeName = User.Identity.Name;
+                    dinner.RSVPs.Add(rsvp);
+
                     _dinnerRepo.Add(dinner);
                     _dinnerRepo.Save();
                     return RedirectToAction("Details", new { id = dinner.DinnerId });
@@ -98,8 +112,6 @@ namespace NerdDinner.Controllers
             return View(new DinnerFormViewModel(dinner));
         }
  
- 
-
         //
         // GET: /Dinners/Delete/2
 

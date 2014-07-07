@@ -48,6 +48,13 @@ namespace NerdDinner.Models
         [Required(ErrorMessage = "Required Field")]
         public float Longitude { get; set; }
 
+        public virtual ICollection<RSVP> RSVPs { get; set; }
+
+        public bool IsHostedBy(string userName)
+        {
+            return HostedBy.Equals(userName, StringComparison.InvariantCultureIgnoreCase);
+        }
+
         public bool IsValid
         {
             get { return (GetRuleViolations().Count() == 0); }

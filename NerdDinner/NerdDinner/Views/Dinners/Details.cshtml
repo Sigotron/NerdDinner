@@ -25,7 +25,12 @@
     @Html.DisplayFor(model => model.HostedBy)
     (@Html.DisplayFor(model => model.ContactPhone))
 </p>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DinnerId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@{
+    if (Model.IsHostedBy(Context.User.Identity.Name))
+    {
+        <p>
+            @Html.ActionLink("Edit", "Edit", new {id = Model.DinnerId}) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+}
