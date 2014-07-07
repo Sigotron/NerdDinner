@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -90,25 +92,30 @@ namespace NerdDinner.Controllers
         [AcceptVerbs(HttpVerbs.Post), Authorize]
         public ActionResult Create(Dinner dinner)
         {
+
             if (ModelState.IsValid)
             {
+
                 try
                 {
                     dinner.HostedBy = User.Identity.Name;
 
                     RSVP rsvp = new RSVP();
                     rsvp.AttendeeName = User.Identity.Name;
+                    dinner.RSVPs = new Collection<RSVP>();
                     dinner.RSVPs.Add(rsvp);
 
                     _dinnerRepo.Add(dinner);
                     _dinnerRepo.Save();
+                 
                     return RedirectToAction("Details", new { id = dinner.DinnerId });
                 }
-                catch
+                catch(DbUpdateException)
                 {
                     ModelState.AddRuleViolations(dinner.GetRuleViolations());
                 }
             }
+
             return View(new DinnerFormViewModel(dinner));
         }
  

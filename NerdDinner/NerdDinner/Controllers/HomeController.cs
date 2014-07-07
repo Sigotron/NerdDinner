@@ -19,7 +19,7 @@ namespace NerdDinner.Controllers
 
         public ActionResult Index(int? page)
         {
-            const int pageSize = 1;
+            const int pageSize = 5;
             var dinners = _dinnerRepo.FindUpcomingDinners();
             var paginatedDinners = new PaginatedList<Dinner>(dinners, page ?? 0, pageSize);
             return View(paginatedDinners);

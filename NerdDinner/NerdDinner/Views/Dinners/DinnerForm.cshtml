@@ -8,43 +8,43 @@
         <legend>Dinner</legend>
         <p>
             @Html.Label("Dinner Title:")
-            @Html.EditorFor(model => model.Dinner.Title)
-            @Html.ValidationMessageFor(model => model.Dinner.Title)
+            @Html.TextBox("Title", Model.Dinner.Title)
+            @Html.ValidationMessage("Title", "*")
         </p>
         <p>
             @Html.Label("Event Date:")
-            @Html.EditorFor(model => model.Dinner.EventDate)
-            @Html.ValidationMessageFor(model => model.Dinner.EventDate)
+            @Html.TextBox("EventDate", Model.Dinner.EventDate)
+            @Html.ValidationMessage("Date", "*")
         </p>
         <p>
             @Html.Label("Description:")
-            @Html.EditorFor(model => model.Dinner.Description)
-            @Html.ValidationMessageFor(model => model.Dinner.Description)
+            @Html.TextBox("Description", Model.Dinner.Description)
+            @Html.ValidationMessage("Description", "*")
         </p>
         <p>
             @Html.Label("Address:")
-            @Html.EditorFor(model => model.Dinner.Address)
-            @Html.ValidationMessageFor(model => model.Dinner.Address)
+            @Html.TextBox("Address", Model.Dinner.Address)
+            @Html.ValidationMessage("Address", "*")
         </p>
         <p>
             @Html.Label("Country:")
             @Html.DropDownList("Country", Model.Countries)
-            @Html.ValidationMessageFor(model => model.Dinner.Country)
+            @Html.ValidationMessage("Country", "*")
         </p>
         <p>
             @Html.Label("Contact Phone #:")
-            @Html.EditorFor(model => model.Dinner.ContactPhone)
-            @Html.ValidationMessageFor(model => model.Dinner.ContactPhone)
+            @Html.TextBox("ContactPhone", Model.Dinner.ContactPhone)
+            @Html.ValidationMessage("ContactPhone", "*")
         </p>
         <p>
             @Html.Label("Latitude:")
-            @Html.EditorFor(model => model.Dinner.Latitude)
-            @Html.ValidationMessageFor(model => model.Dinner.Latitude)
+            @Html.TextBox("Latitude", Model.Dinner.Latitude)
+            @Html.ValidationMessage("Latitude", "*")
         </p>
         <p>
             @Html.Label("Longitude:")
-            @Html.EditorFor(model => model.Dinner.Longitude)
-            @Html.ValidationMessageFor(model => model.Dinner.Longitude)
+            @Html.TextBox("Longitude", Model.Dinner.Longitude)
+            @Html.ValidationMessage("Longitude", "*")
         </p>
         <p>
             <input type="submit" value="Save" />

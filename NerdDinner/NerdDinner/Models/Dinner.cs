@@ -26,8 +26,6 @@ namespace NerdDinner.Models
         [MaxLength(256)]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Required Field")]
-        [MaxLength(20)]
         public string HostedBy { get; set; }
 
         [Required(ErrorMessage = "Required Field")]
@@ -62,7 +60,7 @@ namespace NerdDinner.Models
 
         public bool IsValid
         {
-            get { return (GetRuleViolations().Count() == 0); }
+            get { return (!GetRuleViolations().Any()); }
         }
 
         public void OnValidate(ChangeAction action)
@@ -123,11 +121,11 @@ namespace NerdDinner.Models
 
         public static bool IsValidNumber(string phoneNumber, string country)
         {
-
-            if (country != null && countryRegex.ContainsKey(country))
+            return true;
+            /*if (country != null && countryRegex.ContainsKey(country))
                 return countryRegex[country].IsMatch(phoneNumber);
             else
-                return false;
+                return false;*/
         }
 
         public static IEnumerable<string> Countries
