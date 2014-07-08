@@ -15,14 +15,14 @@ namespace NerdDinner.Controllers
         // AJAX: /Dinners/RSVPForEvent/1
 
         [Authorize, AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Register(int id)
+        public ActionResult Register(int id, string user)
         {
             Dinner dinner = _dinnerRepo.GetDinner(id);
 
-            if (!dinner.IsUserRegistered(User.Identity.Name))
+            if (!dinner.IsUserRegistered(user))
             {
                 RSVP rsvp = new RSVP();
-                rsvp.AttendeeName = User.Identity.Name;
+                rsvp.AttendeeName = user;
 
                 dinner.RSVPs.Add(rsvp);
                 _dinnerRepo.Save();

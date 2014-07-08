@@ -1,4 +1,5 @@
-﻿@model NerdDinner.Models.Dinner
+﻿@using NerdDinner.Controllers
+@model NerdDinner.Models.Dinner
 
 @{
     ViewBag.Title = "Details";
@@ -28,10 +29,10 @@
 @{
     if (Model.IsHostedBy(Context.User.Identity.Name))
     {
-        <p>
-            @Html.ActionLink("Edit", "Edit", new {id = Model.DinnerId}) |
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.DinnerId }) |
             @Html.ActionLink("Back to List", "Index")
-        </p>
+    </p>
     }
 }
 @{
@@ -39,15 +40,34 @@
     {
         if (Model.IsUserRegistered(Context.User.Identity.Name))
         {
-            <p><font color="red">You are registered for this event!</font></p>
+    <font color="green">You are registered for this event!</font>
         }
         else
         {
-            <p><font color="red">You are not registered for this event.</font></p>
+    <div>
+
+        @section scripts
+        {
+            <script>
+
+                $('#register').click(function() {
+                    @{
+                        RSVPController rsvpController = new RSVPController();
+                        rsvpController.Register(Model.DinnerId, Context.User.Identity.Name);
+                    }
+                    $(this).text("Thanks, see you there!");
+                    $(this).css('color', 'green');
+                });
+            </script>
+
+        }
+    </div>
+            <div id="register"><font color="red">Click here to register!</font></div>
+            
         }
     }
     else
     {
-        <p><a href="/Account/Login">Login</a> to RSVP for this event.</p>
+    <p><a href="/Account/Login">Login</a> to RSVP for this event.</p>
     }
 }
