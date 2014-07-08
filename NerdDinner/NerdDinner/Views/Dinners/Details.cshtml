@@ -40,7 +40,7 @@
     {
         if (Model.IsUserRegistered(Context.User.Identity.Name))
         {
-    <font color="green">You are registered for this event!</font>
+    <p><font color="green">You are registered for this event!</font></p>
         }
         else
         {
@@ -56,13 +56,13 @@
                         rsvpController.Register(Model.DinnerId, Context.User.Identity.Name);
                     }
                     $(this).text("Thanks, see you there!");
-                    $(this).css('color', 'green');
+                    $(this).css({ 'color': 'green', 'font-size': '150%' });
                 });
             </script>
 
         }
     </div>
-            <div id="register"><font color="red">Click here to register!</font></div>
+            <div id="register"><u><font color="red">Click here to register!</font></u></div>
             
         }
     }
