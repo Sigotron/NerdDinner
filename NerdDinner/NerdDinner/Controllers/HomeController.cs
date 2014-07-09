@@ -14,15 +14,10 @@ namespace NerdDinner.Controllers
         // Fields
         DinnerRepository _dinnerRepo = new DinnerRepository();
 
-        //
-        // GET: /Dinner/
-
-        public ActionResult Index(int? page)
+        public ActionResult Index()
         {
-            const int pageSize = 5;
             var dinners = _dinnerRepo.FindUpcomingDinners();
-            var paginatedDinners = new PaginatedList<Dinner>(dinners, page ?? 0, pageSize);
-            return View(paginatedDinners);
+            return View(dinners);
         }
 
         public ActionResult About()
