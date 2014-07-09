@@ -44,14 +44,26 @@
         }
         else
         {
-            
-            <div>
+    <div id="register"><u><font color="blue">Click here to register!</font></u></div>
+        }
+    }
+    else
+    {
+    <p><a href="/Account/Login">Login</a> to RSVP for this event.</p>
+    }
+}
 
-                @section scripts
+<script src="http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2" type="text/javascript"></script>
+<script src="/Scripts/Map.js" type="text/javascript"></script>
+
+
+<div id="theMap" style="position: absolute; right: 300px; top: 100px; width: 300px; height: 300px;"></div>
+
+@section scripts
                 {
-                    <script>
+    <script>
 
-                        $('#register').click(function() {
+        $('#register').click(function() {
                             @{
                                 RSVPController rsvpController = new RSVPController();
                                 rsvpController.Register(Model.DinnerId, Context.User.Identity.Name);
@@ -59,19 +71,47 @@
                             $(this).text("Thanks, see you there!");
                             $(this).css({ 'color': 'green', 'font-size': '150%' });
                         });
-                    </script>
+    </script>
 
-                }
-            </div>
-    
-    
-            <div id="register"><u><font color="blue">Click here to register!</font></u></div>
-             
-    
-        }
-    }
-    else
-    {
-    <p><a href="/Account/Login">Login</a> to RSVP for this event.</p>
-    }
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var latitude = @Model.Latitude;
+                            var longitude = @Model.Longitude;
+
+                            if ((latitude == 0) || (longitude == 0))
+                                LoadMap();
+                            else
+                                LoadMap(latitude, longitude, mapLoaded);
+                        });
+
+                        function mapLoaded() {
+                            var title = "@Html.Encode(Model.Title)";
+                            var address = "@Html.Encode(Model.Address)";
+
+                            LoadPin(center, title, address);
+                            map.SetZoomLevel(14);
+                        }
+
+    </script>
+
+    <script type="text/javascript">
+ 
+        $(document).ready(function() {
+            $("#Address").blur(function(evt) {
+                $("#Latitude").val("");
+                $("#Longitude").val("");
+ 
+                var address = jQuery.trim($("#Address").val());
+                if (address.length < 1)
+                    return;
+ 
+                FindAddressOnMap(address);
+            });
+        });
+ 
+    </script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+
 }
