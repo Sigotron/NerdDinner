@@ -14,5 +14,45 @@
 </div>
 
 @section Scripts {
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var latitude = @Model.Dinner.Latitude;
+            var longitude = @Model.Dinner.Longitude;
+
+            if ((latitude == 0) || (longitude == 0))
+                LoadMap();
+            else
+                LoadMap(latitude, longitude, mapLoaded);
+        });
+
+        function mapLoaded() {
+            var title = "@Html.Encode(Model.Dinner.Title)";
+            var address = "@Html.Encode(Model.Dinner.Address)";
+
+            LoadPin(center, title, address);
+            map.SetZoomLevel(14);
+        }
+
+    </script>
+    
+     <script type="text/javascript">
+ 
+         $(document).ready(function() {
+             $("#Address").blur(function(evt) {
+                 $("#Latitude").val("");
+                 $("#Longitude").val("");
+ 
+                 var address = jQuery.trim($("#Address").val());
+                 if (address.length < 1)
+                     return;
+ 
+                 FindAddressOnMap(address);
+             });
+         });
+ 
+</script>
+
     @Scripts.Render("~/bundles/jqueryval")
 }
