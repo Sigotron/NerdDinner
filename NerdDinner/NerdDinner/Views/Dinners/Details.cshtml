@@ -44,26 +44,30 @@
         }
         else
         {
-    <div>
-
-        @section scripts
-        {
-            <script>
-
-                $('#register').click(function() {
-                    @{
-                        RSVPController rsvpController = new RSVPController();
-                        rsvpController.Register(Model.DinnerId, Context.User.Identity.Name);
-                    }
-                    $(this).text("Thanks, see you there!");
-                    $(this).css({ 'color': 'green', 'font-size': '150%' });
-                });
-            </script>
-
-        }
-    </div>
-            <div id="register"><u><font color="red">Click here to register!</font></u></div>
             
+            <div>
+
+                @section scripts
+                {
+                    <script>
+
+                        $('#register').click(function() {
+                            @{
+                                RSVPController rsvpController = new RSVPController();
+                                rsvpController.Register(Model.DinnerId, Context.User.Identity.Name);
+                            }
+                            $(this).text("Thanks, see you there!");
+                            $(this).css({ 'color': 'green', 'font-size': '150%' });
+                        });
+                    </script>
+
+                }
+            </div>
+    
+    
+            <div id="register"><u><font color="blue">Click here to register!</font></u></div>
+             
+    
         }
     }
     else

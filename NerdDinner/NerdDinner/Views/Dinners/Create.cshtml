@@ -13,6 +13,48 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+@*<div>
+    @section scripts
+    {
+        <script>
+            $('#whatever').click(function() {
+                alert("hello");
+            });
+            </script>
+    }
+</div>
+<div id="whatever">THIS IS HERE FOR TESTING PURPOSES!!!</div>*@
+
+
 @section Scripts {
+    
+    @*    <script>
+            $('#whatever').click(function() {
+                alert("hello");
+            });
+            </script>*@
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var latitude = "@Html.Encode(Model.Dinner.Latitude)";
+                var longitude = "@Html.Encode(Model.Dinner.Longitude)";
+
+                if ((latitude == 0) || (longitude == 0))
+                    LoadMap();
+                else
+                    LoadMap(latitude, longitude, mapLoaded);
+            });
+
+            function mapLoaded() {
+                var title = "@Html.Encode(Model.Dinner.Title)";
+            var address = "@Html.Encode(Model.Dinner.Address)";
+
+            LoadPin(center, title, address);
+            map.SetZoomLevel(14);
+        }
+
+</script>
+
     @Scripts.Render("~/bundles/jqueryval")
 }

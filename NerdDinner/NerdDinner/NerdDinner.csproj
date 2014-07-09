@@ -251,6 +251,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\Map.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -302,6 +303,7 @@
     <Content Include="Views\Dinners\Deleted.cshtml" />
     <Content Include="Views\Dinners\DinnerForm.cshtml" />
     <Content Include="Views\Dinners\InvalidOwner.cshtml" />
+    <Content Include="Views\Dinners\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
