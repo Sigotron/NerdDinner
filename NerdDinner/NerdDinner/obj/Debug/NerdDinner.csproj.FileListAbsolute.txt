@@ -47,3 +47,17 @@ C:\Git\NerdDinner\NerdDinner\NerdDinner\bin\DotNetOpenAuth.OpenId.RelyingParty.x
 C:\Git\NerdDinner\NerdDinner\NerdDinner\obj\Debug\NerdDinner.csprojResolveAssemblyReference.cache
 C:\Git\NerdDinner\NerdDinner\NerdDinner\obj\Debug\NerdDinner.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner\obj\Debug\NerdDinner.pdb
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\NerdDinner.dll.config
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\EntityFramework.SqlServer.dll
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\System.Net.Http.Extensions.dll
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\System.Net.Http.Primitives.dll
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\Mono.Math.dll
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\Antlr3.Runtime.pdb
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\EntityFramework.SqlServer.xml
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\System.Net.Http.Extensions.xml
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\System.Net.Http.Primitives.xml
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\System.Web.Optimization.xml
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Git\nerddinner\NerdDinner\NerdDinner\bin\Mono.Math.xml
+C:\Git\nerddinner\NerdDinner\NerdDinner\obj\Debug\NerdDinner.csproj.App.config
