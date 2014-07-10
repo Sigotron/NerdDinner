@@ -106,7 +106,7 @@ function callbackUpdateMapDinners(layer, resultsArray, places, hasMore, VEErrorM
                     RsvpMessage = "" + dinner.RSVPCount + "RSVPs";
 
                 // Add Pin to Map
-                LoadPin(LL, '<a href="/Dinners/Details/' + dinner.DinnerID + '">'
+                LoadPin(LL, '<a href="/Dinners/Details/' + dinner.DinnerId + '">'
                     + dinner.Title + '</a>',
                     "<p>" + dinner.Description + "</p>" + RsvpMessage);
 
@@ -114,7 +114,7 @@ function callbackUpdateMapDinners(layer, resultsArray, places, hasMore, VEErrorM
                 $('#dinnerList').append($('<li/>')
                     .attr("class", "dinnerItem")
                     .append($('<a/>').attr("href",
-                            "/Dinners/Details/" + dinner.DinnerID)
+                            "/Dinners/Details/" + dinner.DinnerId)
                         .html(dinner.Title))
                     .append(" (" + RsvpMessage + ")"));
             });
