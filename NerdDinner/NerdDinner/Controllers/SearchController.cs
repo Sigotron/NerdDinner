@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using NerdDinner.Models;
 
 public class JsonDinner
 {
-    public int DinnerID { get; set; }
+    public int DinnerId { get; set; }
     public string Title { get; set; }
     public double Latitude { get; set; }
     public double Longitude { get; set; }
@@ -25,18 +26,17 @@ public class SearchController : Controller
     {
 
         var dinners = _dinnerRepo.FindByLocation(latitude, longitude);
-
         var jsonDinners = from dinner in dinners
                           select new JsonDinner
                           {
-                              DinnerID = dinner.DinnerId,
-                              Latitude = dinner.Latitude,
-                              Longitude = dinner.Longitude,
+                              DinnerId = dinner.DinnerId,
+                              Latitude = (double) dinner.Latitude,
+                              Longitude = (double) dinner.Longitude,
                               Title = dinner.Title,
                               Description = dinner.Description,
-                              RSVPCount = dinner.RSVPs.Count
+                              RSVPCount = dinner.RSVPs.Count,
                           };
-
-        return Json(jsonDinners.ToList());
+        var listOfDinners = jsonDinners.ToList();
+        return Json(listOfDinners);
     }
 }

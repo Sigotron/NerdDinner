@@ -130,11 +130,10 @@ function callbackUpdateMapDinners(layer, resultsArray, places, hasMore, VEErrorM
                 );
             });
         }, "json");
+}
 
-    function clearMap() {
+function clearMap() {
         map.Clear();
         points = [];
         shapes = [];
     }
-
-}
