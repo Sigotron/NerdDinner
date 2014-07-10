@@ -6,7 +6,18 @@ using System.Linq;
 
 namespace NerdDinner.Models
 {
-    public class DinnerRepository
+    public interface IDinnerRepository
+    {
+        IQueryable<Dinner> FindAllDinners();
+        IQueryable<Dinner> FindUpcomingDinners();
+        Dinner GetDinner(int id);
+        void Add(Dinner dinner);
+        void Delete(Dinner dinner);
+        void Save();
+        IQueryable<Dinner> FindByLocation(float latitude, float longitude);
+    }
+
+    public class DinnerRepository : IDinnerRepository
     {
         // field
         private readonly NerdDinnerEntities _db = new NerdDinnerEntities();

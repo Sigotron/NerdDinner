@@ -17,13 +17,11 @@ C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\EntityFramework.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\System.Web.Optimization.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\DotNetOpenAuth.AspNet.dll
-C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\WebGrease.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\DotNetOpenAuth.Core.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\DotNetOpenAuth.OAuth.Consumer.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\DotNetOpenAuth.OAuth.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\DotNetOpenAuth.OpenId.dll
-C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Antlr3.Runtime.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\NerdDinner.pdb
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\System.Net.Http.Formatting.xml
@@ -46,3 +44,12 @@ C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\DotNetOpenAuth.OpenId.xm
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\obj\Debug\NerdDinner.Tests.csprojResolveAssemblyReference.cache
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\obj\Debug\NerdDinner.Tests.dll
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\obj\Debug\NerdDinner.Tests.pdb
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\WebMatrix.WebData.dll
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\WebMatrix.Data.dll
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Org.Mentalis.Security.Cryptography.dll
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Mono.Math.dll
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\WebMatrix.WebData.xml
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\WebMatrix.Data.xml
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Org.Mentalis.Security.Cryptography.xml
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Mono.Math.xml
