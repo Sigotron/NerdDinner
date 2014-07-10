@@ -53,3 +53,6 @@ C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\WebMatrix.WebData.xml
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\WebMatrix.Data.xml
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Org.Mentalis.Security.Cryptography.xml
 C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Mono.Math.xml
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Moq.dll
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Moq.pdb
+C:\Git\NerdDinner\NerdDinner\NerdDinner.Tests\bin\Debug\Moq.xml
